@@ -1,0 +1,245 @@
+﻿CREATE TABLE ExceptionLogs
+(
+	ID INT PRIMARY KEY IDENTITY,
+	TimeStamp TimeStamp,
+	SourceURL NVARCHAR(500),
+	ErrorMessage NVARCHAR(MAX)
+)
+
+CREATE TABLE APILogs
+(
+	ID INT PRIMARY KEY IDENTITY,
+	TimeStamp TimeStamp,
+	Request NVARCHAR(MAX),
+	[Message] NVARCHAR(MAX),
+	RequestType NVARCHAR(10)
+)
+
+GO
+CREATE PROCEDURE USP_SaveWebAPILogs
+(
+	@requestInfo NVARCHAR(MAX),
+	@message NVARCHAR(MAX),
+	@type NVARCHAR(10)
+)
+AS
+BEGIN
+
+INSERT INTO APILogs(Request,[Message],RequestType)
+VALUES (@requestInfo,@message,@type)
+
+END
+
+
+GO
+CREATE PROCEDURE USP_InserWebApiErrors
+(
+	@AbsolutePath NVARCHAR(MAX),
+	@Error NVARCHAR(MAX)
+)
+AS
+BEGIN
+
+INSERT INTO ExceptionLogs(SourceURL,ErrorMessage)
+VALUES (@AbsolutePath,@Error)
+
+END
+
+CREATE TABLE Orders
+(
+	ID INT PRIMARY KEY IDENTITY,
+	FirstName NVARCHAR(200),
+	LastName NVARCHAR(200),
+	OrderAmount DECIMAL(6,3),
+	OrderDate DATETIME,
+	Discount DECIMAL(6,3),
+    DeliveryCharges DECIMAL(6,3),
+    ShippingMobileNumber NVARCHAR(500),
+    ShippingName NVARCHAR(500),
+    ShippingLine1 NVARCHAR(500),
+    ShippingLine2 NVARCHAR(500),
+    ShippingCity NVARCHAR(500),
+    ShippingState NVARCHAR(500),
+    ShippingPinCode NVARCHAR(500),
+    BillingName NVARCHAR(500),
+    BillingAddressLine1 NVARCHAR(500),
+    BillingAddressLine2 NVARCHAR(500),
+    BillingAddressCity NVARCHAR(500),
+    BillingAddressState NVARCHAR(500),
+    BillingAddressPinCode NVARCHAR(500)
+)
+
+CREATE TABLE OrderItems
+(
+     OrderItemID INT PRIMARY KEY IDENTITY,
+     OrderID INT,
+     ItemName NVARCHAR(500),
+     GrossPrice DECIMAL(6,3),
+     SellingPrice DECIMAL(6,3),
+     Discount DECIMAL(6,3)
+)
+CREATE TABLE Customers
+(
+	ID INT PRIMARY KEY IDENTITY,
+	FirstName NVARCHAR(200),
+	LastName NVARCHAR(200),
+	Email NVARCHAR(500),
+	TimeStamp TimeStamp
+)
+GO
+
+
+
+CREATE PROCEDURE USP_CreateCustomer
+(
+	@FirstName NVARCHAR(200),
+	@LastName NVARCHAR(200),
+	@Email NVARCHAR(500)
+)
+AS
+BEGIN
+
+IF NOT EXISTS (SELECT 1 FROM Customers WHERE EMAIL = @Email)
+BEGIN
+	INSERT INTO CUSTOMERS (FirstName,LastName, Email)
+	VALUES (@FirstName,@LastName, @Email)
+END
+
+SELECT SCOPE_IDENTITY() AS cutomerID
+END
+
+
+GO
+CREATE PROCEDURE USP_GetOrders
+AS
+BEGIN
+
+SELECT 
+    ID ,
+	FirstName,
+	LastName,
+	OrderDate,
+	OrderAmount,
+	Discount,
+    DeliveryCharges,
+    ShippingMobileNumber,
+    ShippingName,
+    ShippingLine1,
+    ShippingLine2 ,
+    ShippingCity ,
+    ShippingState ,
+    ShippingPinCode ,
+    BillingName ,
+    BillingAddressLine1,
+    BillingAddressLine2,
+    BillingAddressCity,
+    BillingAddressState ,
+    BillingAddressPinCode
+FROM Orders
+
+END
+
+
+GO
+CREATE PROCEDURE USP_CreateOrder
+(
+    @FirstName NVARCHAR(200),
+	@LastName NVARCHAR(200),
+	@OrderAmount DECIMAL(6,3),
+    @OrderDate DATETIME,
+	@Discount DECIMAL(6,3),
+    @DeliveryCharges DECIMAL(6,3),
+    @ShippingMobileNumber NVARCHAR(500),
+    @ShippingName NVARCHAR(500),
+    @ShippingLine1 NVARCHAR(500),
+    @ShippingLine2 NVARCHAR(500),
+    @ShippingCity NVARCHAR(500),
+    @ShippingState NVARCHAR(500),
+    @ShippingPinCode NVARCHAR(500),
+    @BillingName NVARCHAR(500),
+    @BillingAddressLine1 NVARCHAR(500),
+    @BillingAddressLine2 NVARCHAR(500),
+    @BillingAddressCity NVARCHAR(500),
+    @BillingAddressState NVARCHAR(500),
+    @BillingAddressPinCode NVARCHAR(500)
+)
+AS
+BEGIN
+
+INSERT INTO Orders 
+(
+FirstName,
+LastName,
+OrderAmount,
+OrderDate,
+Discount ,
+DeliveryCharges,
+ShippingMobileNumber,
+ShippingName,
+ShippingLine1,
+ShippingLine2,
+ShippingCity,
+ShippingState,
+ShippingPinCode,
+BillingName,
+BillingAddressLine1,
+BillingAddressLine2,
+BillingAddressCity,
+BillingAddressState,
+BillingAddressPinCode
+)
+VALUES
+(
+    @FirstName,
+	@LastName,
+	@OrderAmount,
+    @OrderDate,
+	@Discount,
+    @DeliveryCharges,
+    @ShippingMobileNumber,
+    @ShippingName,
+    @ShippingLine1,
+    @ShippingLine2,
+    @ShippingCity,
+    @ShippingState,
+    @ShippingPinCode,
+    @BillingName,
+    @BillingAddressLine1,
+    @BillingAddressLine2,
+    @BillingAddressCity,
+    @BillingAddressState,
+    @BillingAddressPinCode
+)
+
+SELECT SCOPE_IDENTITY() AS OrderID
+END
+
+
+GO
+CREATE PROCEDURE USP_CreateOrderItems
+(
+    @OrderID INT,
+	@ItemName NVARCHAR(500),
+	@GrossPrice DECIMAL(6,3),
+	@SellingPrice DECIMAL(6,3),
+	@Discount DECIMAL(6,3)
+)
+AS
+BEGIN
+INSERT INTO OrderItems
+(
+OrderId,
+ItemName,
+GrossPrice ,
+SellingPrice,
+Discount
+)
+VALUES
+(
+@OrderId,
+@ItemName,
+@GrossPrice ,
+@SellingPrice,
+@Discount
+)
+END

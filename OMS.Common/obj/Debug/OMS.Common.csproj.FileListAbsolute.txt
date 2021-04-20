@@ -1,0 +1,6 @@
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.Common\bin\Debug\OMS.Common.dll
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.Common\bin\Debug\OMS.Common.pdb
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.Common\obj\Debug\OMS.Common.csprojAssemblyReference.cache
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.Common\obj\Debug\OMS.Common.csproj.CoreCompileInputs.cache
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.Common\obj\Debug\OMS.Common.dll
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.Common\obj\Debug\OMS.Common.pdb

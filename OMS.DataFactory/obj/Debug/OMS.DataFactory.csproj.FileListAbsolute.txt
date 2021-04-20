@@ -1,0 +1,11 @@
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\bin\Debug\OMS.DataFactory.dll
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\bin\Debug\OMS.DataFactory.pdb
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\bin\Debug\OMS.IDataAccess.dll
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\bin\Debug\OMS.Common.dll
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\bin\Debug\OMS.IDataAccess.pdb
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\bin\Debug\OMS.Common.pdb
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\obj\Debug\OMS.DataFactory.csprojAssemblyReference.cache
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\obj\Debug\OMS.DataFactory.csproj.CoreCompileInputs.cache
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\obj\Debug\OMS.DataFactory.csproj.CopyComplete
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\obj\Debug\OMS.DataFactory.dll
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.DataFactory\obj\Debug\OMS.DataFactory.pdb

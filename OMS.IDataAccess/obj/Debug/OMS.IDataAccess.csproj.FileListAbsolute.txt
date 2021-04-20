@@ -1,0 +1,9 @@
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.IDataAccess\bin\Debug\OMS.IDataAccess.dll
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.IDataAccess\bin\Debug\OMS.IDataAccess.pdb
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.IDataAccess\bin\Debug\OMS.Common.dll
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.IDataAccess\bin\Debug\OMS.Common.pdb
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.IDataAccess\obj\Debug\OMS.IDataAccess.csprojAssemblyReference.cache
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.IDataAccess\obj\Debug\OMS.IDataAccess.csproj.CoreCompileInputs.cache
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.IDataAccess\obj\Debug\OMS.IDataAccess.csproj.CopyComplete
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.IDataAccess\obj\Debug\OMS.IDataAccess.dll
+D:\Personal\OrderManagement_Proj\OMS_API\OMS.IDataAccess\obj\Debug\OMS.IDataAccess.pdb
